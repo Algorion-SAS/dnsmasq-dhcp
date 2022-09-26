@@ -1,0 +1,20 @@
+version: '2.4'
+
+services:
+  dhcp:
+    image: cyrius/dhcp
+    container_name: dhcp.cyri.us
+    restart: unless-stopped
+    volumes:
+      - ./dhcp:/data/conf
+    environment:
+      GUID: '1000'
+      UUID: '1000'
+#    user: '1000'
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+    logging:
+      driver: journald
+    mem_limit: 64m
+    cpus: 0.5
