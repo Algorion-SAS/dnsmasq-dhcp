@@ -1,5 +1,11 @@
 # netmasq-dhcp
-A Docker container that provide a DHCP server using netmasq
+A Docker container that provide a DHCP server using netmasq.
+
+The goal of the container is to provide a lighweigt easily configurable and deployable server on a Raspberry Pi.
+
+On a home network with few devices it use ~10MiB of RAM
+
+HUB: https://hub.docker.com/r/cyrius/netmasq-dhcp
 
 ## Configuration
 
@@ -28,3 +34,16 @@ The configuration are stored in the `/data/conf/` folder.
 
 The `dnsmasq.conf` file is the configuration of dnsmasq
 The `dnsmasq.leases` file contain the current lease
+
+## Static IP
+
+You can assign a static IP to a MAC address in the `dnsmasq.conf` file
+
+At the bottom of the file you can add a line with the following format
+`dhcp-host=MAC,STATIC_IP`
+
+Like this
+`dhcp-host=40:b0:76:ff:ff:ff,192.168.0.2 # My super PC `
+
+You can read the `dnsmasq.leases` file to know the mac address of devices that already got a lease.
+
