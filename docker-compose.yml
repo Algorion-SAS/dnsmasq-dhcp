@@ -3,14 +3,19 @@ version: '2.4'
 services:
   dhcp:
     image: cyrius/dhcp
-    container_name: dhcp.cyri.us
+    container_name: dhcp
     restart: unless-stopped
     volumes:
       - ./dhcp:/data/conf
     environment:
       GUID: '1000'
       UUID: '1000'
-#    user: '1000'
+      DHCP_START_ADDRESS: '192.168.1.101'
+      DHCP_END_ADDRESS: '192.168.1.200'
+      DHCP_ADDRESS_MASK: '255.255.255.0'
+      DHCP_LEASE_TIME: '24h'
+      DHCP_ROUTER_ADDRESS: '192.168.1.1'
+      DHCP_DNS: '192.168.1.250, 1.1.1.1'
     network_mode: host
     cap_add:
       - NET_ADMIN
