@@ -3,7 +3,7 @@ FROM arm32v7/alpine
 MAINTAINER Cyrius cyril@algorion.fr
 
 LABEL version="1.0"
-LABEL description="Simple vpn server using openvpn."
+LABEL description="DHCP server using netmasq"
 
 RUN apk --update add --no-cache \
     bash \
