@@ -1,11 +1,11 @@
-# netmasq-dhcp
-A Docker container that provide a DHCP server using netmasq.
+# dnsmasq-dhcp
+A Docker container that provide a DHCP server using dnsmasq.
 
 The goal of the container is to provide a lighweigt easily configurable and deployable server on a Raspberry Pi.
 
 On a home network with few devices it use ~10MiB of RAM
 
-HUB: https://hub.docker.com/r/cyrius/netmasq-dhcp
+HUB: https://hub.docker.com/r/cyrius/dnsmasq-dhcp
 
 ## Configuration
 
